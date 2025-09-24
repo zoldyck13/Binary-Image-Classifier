@@ -90,7 +90,7 @@ dataset/
     └── ...
 ```
 
-> Folder names must match exactly the categories defined in the code (`water` and `other`).
+> Folder names must match exactly the categories defined in the code (`class_a` and `class_b`).
 
 ---
 
