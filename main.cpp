@@ -25,7 +25,7 @@ const int EPOCHS = 500;
 
 void loadDataset(const std::string &path, std::vector<std::vector<double>> &X, std::vector<std::vector<double>> &Y){
     
-    std::vector<std::string> categories = {"water", "other"}; 
+    std::vector<std::string> categories = {"class_a", "class_b"}; 
 
     for(size_t class_index = 0; class_index < categories.size(); class_index++){
         std::string folder = path + "/" + categories[class_index];
