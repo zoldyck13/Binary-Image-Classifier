@@ -1,0 +1,1113 @@
+test.cpp: In function ‘void loadNN(const std::string&, NeuralNetwork&)’:
+test.cpp:88:24: error: no match for ‘operator<<’ (operand types are ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’})
+   88 |                 myfile << nn.b_hidden[i];
+test.cpp:88:24: note: there are 51 candidates
+In file included from /opt/opencv2/include/opencv2/core/core.hpp:4932,
+                 from /opt/opencv2/include/opencv2/opencv.hpp:49,
+                 from test.cpp:8:
+/opt/opencv2/include/opencv2/core/operations.hpp:2990:25: note: candidate 1: ‘cv::FileStorage& cv::operator<<(FileStorage&, const std::string&)’
+ 2990 | CV_EXPORTS FileStorage& operator << (FileStorage& fs, const string& str);
+      |                         ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2990:51: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2990 | CV_EXPORTS FileStorage& operator << (FileStorage& fs, const string& str);
+      |                                      ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:2992:28: note: candidate 2: ‘cv::FileStorage& cv::operator<<(FileStorage&, const char*)’
+ 2992 | static inline FileStorage& operator << (FileStorage& fs, const char* str)
+      |                            ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2992:54: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2992 | static inline FileStorage& operator << (FileStorage& fs, const char* str)
+      |                                         ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:2995:28: note: candidate 3: ‘cv::FileStorage& cv::operator<<(FileStorage&, char*)’
+ 2995 | static inline FileStorage& operator << (FileStorage& fs, char* value)
+      |                            ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2995:54: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2995 | static inline FileStorage& operator << (FileStorage& fs, char* value)
+      |                                         ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:3949:29: note: candidate 4: ‘std::ostream& cv::operator<<(std::ostream&, const Mat&)’
+ 3949 | static inline std::ostream& operator << (std::ostream& out, const Mat& mtx)
+      |                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3949:56: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+ 3949 | static inline std::ostream& operator << (std::ostream& out, const Mat& mtx)
+      |                                          ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3962:29: note: candidate 5: ‘std::ostream& cv::operator<<(std::ostream&, const Formatted&)’
+ 3962 | static inline std::ostream& operator << (std::ostream& out, const Formatted& fmtd)
+      |                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3962:56: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+ 3962 | static inline std::ostream& operator << (std::ostream& out, const Formatted& fmtd)
+      |                                          ~~~~~~~~~~~~~~^~~
+In file included from /opt/opencv2/include/opencv2/opencv.hpp:80:
+/opt/opencv2/include/opencv2/contrib/contrib.hpp:402:30: note: candidate 6: ‘std::ostream& cv::operator<<(std::ostream&, const TickMeter&)’
+  402 |     CV_EXPORTS std::ostream& operator<<(std::ostream& out, const TickMeter& tm);
+      |                              ^~~~~~~~
+/opt/opencv2/include/opencv2/contrib/contrib.hpp:402:55: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+  402 |     CV_EXPORTS std::ostream& operator<<(std::ostream& out, const TickMeter& tm);
+      |                                         ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1110:33: note: candidate 7: ‘template<class _Tp, class _T2, int m, int n> cv::MatxCommaInitializer<_Tp, m, n> cv::operator<<(const Matx<_Tp, n, nm>&, _T2)’
+ 1110 | MatxCommaInitializer<_Tp, m, n> operator << (const Matx<_Tp, m, n>& mtx, _T2 val)
+      |                                 ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1110:33: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Matx<_Tp, n, nm>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:1478:30: note: candidate 8: ‘template<class _Tp, class _T2, int cn> cv::VecCommaInitializer<_Tp, cn> cv::operator<<(const Vec<_Tp, n>&, _T2)’
+ 1478 | VecCommaInitializer<_Tp, cn> operator << (const Vec<_Tp, cn>& vec, _T2 val)
+      |                              ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1478:30: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Vec<_Tp, n>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:2978:51: note: candidate 9: ‘template<class _Tp> cv::FileStorage& cv::operator<<(FileStorage&, const _Tp&)’
+ 2978 | template<typename _Tp> static inline FileStorage& operator << (FileStorage& fs, const _Tp& value)
+      |                                                   ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2978:51: note: template argument deduction/substitution failed:
+test.cpp:88:17: note:   cannot convert ‘myfile’ (type ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’}) to type ‘cv::FileStorage&’
+   88 |                 myfile << nn.b_hidden[i];
+      |                 ^~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3969:52: note: candidate 10: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const std::vector<Point_<_Tp> >&)’
+ 3969 | template<typename _Tp> static inline std::ostream& operator << (std::ostream& out,
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3969:52: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const std::vector<cv::Point_<_Tp> >’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3977:52: note: candidate 11: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const std::vector<Point3_<_Tp> >&)’
+ 3977 | template<typename _Tp> static inline std::ostream& operator << (std::ostream& out,
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3977:52: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const std::vector<cv::Point3_<_Tp> >’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3987:59: note: candidate 12: ‘template<class _Tp, int m, int n> std::ostream& cv::operator<<(std::ostream&, const Matx<_Tp, m, n>&)’
+ 3987 | template<typename _Tp, int m, int n> inline std::ostream& operator<<(std::ostream& out, const Matx<_Tp, m, n>& matx)
+      |                                                           ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3987:59: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const cv::Matx<_Tp, m, n>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3995:45: note: candidate 13: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Point_<_Tp>&)’
+ 3995 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Point_<_Tp>& p)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3995:45: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const cv::Point_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4003:45: note: candidate 14: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Point3_<_Tp>&)’
+ 4003 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Point3_<_Tp>& p)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4003:45: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const cv::Point3_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4011:52: note: candidate 15: ‘template<class _Tp, int n> std::ostream& cv::operator<<(std::ostream&, const Vec<_Tp, m>&)’
+ 4011 | template<typename _Tp, int n> inline std::ostream& operator<<(std::ostream& out, const Vec<_Tp, n>& vec)
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4011:52: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const cv::Vec<_Tp, m>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4035:45: note: candidate 16: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Size_<_Tp>&)’
+ 4035 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Size_<_Tp>& size)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4035:45: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const cv::Size_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4043:45: note: candidate 17: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Rect_<_Tp>&)’
+ 4043 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Rect_<_Tp>& rect)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4043:45: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const cv::Rect_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /opt/opencv2/include/opencv2/core/core.hpp:4933:
+/opt/opencv2/include/opencv2/core/mat.hpp:2091:1: note: candidate 18: ‘template<class _Tp, class T2> cv::MatCommaInitializer_<_Tp> cv::operator<<(const Mat_<_Tp>&, T2)’
+ 2091 | operator << (const Mat_<_Tp>& m, T2 val)
+      | ^~~~~~~~
+/opt/opencv2/include/opencv2/core/mat.hpp:2091:1: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Mat_<_Tp>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /usr/include/c++/15.2.1/bits/basic_string.h:51,
+                 from /usr/include/c++/15.2.1/string:56,
+                 from /usr/include/c++/15.2.1/bits/locale_classes.h:42,
+                 from /usr/include/c++/15.2.1/bits/ios_base.h:43,
+                 from /usr/include/c++/15.2.1/ios:46,
+                 from /usr/include/c++/15.2.1/bits/ostream.h:43,
+                 from /usr/include/c++/15.2.1/ostream:42,
+                 from /usr/include/c++/15.2.1/iostream:43,
+                 from test.cpp:1:
+/usr/include/c++/15.2.1/string_view:767:5: note: candidate 19: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  767 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/string_view:767:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/basic_string.h:4367:5: note: candidate 20: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 4367 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/basic_string.h:4367:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /usr/include/c++/15.2.1/bits/memory_resource.h:40,
+                 from /usr/include/c++/15.2.1/string:72:
+/usr/include/c++/15.2.1/cstddef:130:5: note: candidate 21: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(byte, _IntegerType)’
+  130 |     operator<<(byte __b, _IntegerType __shift) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/cstddef:130:5: note: template argument deduction/substitution failed:
+test.cpp:88:17: note:   cannot convert ‘myfile’ (type ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’}) to type ‘std::byte’
+   88 |                 myfile << nn.b_hidden[i];
+      |                 ^~~~~~
+In file included from /usr/include/c++/15.2.1/bits/ios_base.h:48:
+/usr/include/c++/15.2.1/system_error:341:5: note: candidate 22: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  341 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/system_error:341:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:626:5: note: candidate 23: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  626 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:626:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:636:5: note: candidate 24: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  636 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:636:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:642:5: note: candidate 25: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  642 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:642:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:653:5: note: candidate 26: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  653 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:653:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:658:5: note: candidate 27: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  658 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:658:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:717:5: note: candidate 28: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  717 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:717:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /usr/include/c++/15.2.1/ostream:294:
+/usr/include/c++/15.2.1/bits/ostream.tcc:311:5: note: candidate 29: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  311 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.tcc:311:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:734:5: note: candidate 30: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  734 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:734:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:747:5: note: candidate 31: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  747 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:747:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:752:5: note: candidate 32: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  752 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:752:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: note: candidate 33: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  836 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: note: template argument deduction/substitution failed:
+/usr/include/c++/15.2.1/bits/ostream.h: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ifstream<char>&; _Tp = double]’:
+test.cpp:88:26:   required from here
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+  836 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+In file included from /usr/include/c++/15.2.1/bits/fs_path.h:38,
+                 from /usr/include/c++/15.2.1/filesystem:54,
+                 from test.cpp:7:
+/usr/include/c++/15.2.1/iomanip:89:5: note: candidate 34: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Resetiosflags)’
+   89 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:89:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:119:5: note: candidate 35: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setiosflags)’
+  119 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:119:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:153:5: note: candidate 36: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setbase)’
+  153 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:153:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:190:5: note: candidate 37: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setfill<_CharT>)’
+  190 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:190:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:220:5: note: candidate 38: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setprecision)’
+  220 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:220:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:250:5: note: candidate 39: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setw)’
+  250 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:250:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:323:5: note: candidate 40: ‘template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_money<_MoneyT>)’
+  323 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:323:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:375:5: note: candidate 41: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_time<_CharT>)’
+  375 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:375:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /usr/include/c++/15.2.1/bits/fs_path.h:46:
+/usr/include/c++/15.2.1/bits/shared_ptr.h:70:5: note: candidate 42: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __shared_ptr<_Tp, _Lp>&)’
+   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/shared_ptr.h:70:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /opt/opencv2/include/opencv2/core/core.hpp:56:
+/usr/include/c++/15.2.1/complex:597:5: note: candidate 43: ‘template<class _Tp, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const complex<_Tp>&)’
+  597 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const complex<_Tp>& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/complex:597:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+In file included from /usr/include/c++/15.2.1/valarray:607,
+                 from /opt/opencv2/include/opencv2/contrib/retina.hpp:76,
+                 from /opt/opencv2/include/opencv2/contrib/contrib.hpp:992:
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 44: ‘template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const _Expr<_Dom2, typename _Dom2::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 45: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 46: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const typename _Dom::value_type&, const _Expr<_Dom1, typename _Dom1::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 47: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const valarray<typename _Dom::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 48: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const valarray<typename _Dom::value_type>&, const _Expr<_Dom1, typename _Dom1::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 49: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const valarray<_Tp>&, const valarray<_Tp>&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::valarray<_Tp>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 50: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const valarray<_Tp>&, const typename valarray<_Tp>::value_type&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::valarray<_Tp>’
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 51: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const typename valarray<_Tp>::value_type&, const valarray<_Tp>&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:88:40: note:   mismatched types ‘const std::valarray<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   88 |                 myfile << nn.b_hidden[i];
+      |                                        ^
+test.cpp:92:32: error: no match for ‘operator<<’ (operand types are ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’})
+   92 |                         myfile << nn.w_hidden_output[i][j];
+test.cpp:92:32: note: there are 51 candidates
+/opt/opencv2/include/opencv2/core/operations.hpp:2990:25: note: candidate 1: ‘cv::FileStorage& cv::operator<<(FileStorage&, const std::string&)’
+ 2990 | CV_EXPORTS FileStorage& operator << (FileStorage& fs, const string& str);
+      |                         ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2990:51: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2990 | CV_EXPORTS FileStorage& operator << (FileStorage& fs, const string& str);
+      |                                      ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:2992:28: note: candidate 2: ‘cv::FileStorage& cv::operator<<(FileStorage&, const char*)’
+ 2992 | static inline FileStorage& operator << (FileStorage& fs, const char* str)
+      |                            ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2992:54: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2992 | static inline FileStorage& operator << (FileStorage& fs, const char* str)
+      |                                         ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:2995:28: note: candidate 3: ‘cv::FileStorage& cv::operator<<(FileStorage&, char*)’
+ 2995 | static inline FileStorage& operator << (FileStorage& fs, char* value)
+      |                            ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2995:54: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2995 | static inline FileStorage& operator << (FileStorage& fs, char* value)
+      |                                         ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:3949:29: note: candidate 4: ‘std::ostream& cv::operator<<(std::ostream&, const Mat&)’
+ 3949 | static inline std::ostream& operator << (std::ostream& out, const Mat& mtx)
+      |                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3949:56: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+ 3949 | static inline std::ostream& operator << (std::ostream& out, const Mat& mtx)
+      |                                          ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3962:29: note: candidate 5: ‘std::ostream& cv::operator<<(std::ostream&, const Formatted&)’
+ 3962 | static inline std::ostream& operator << (std::ostream& out, const Formatted& fmtd)
+      |                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3962:56: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+ 3962 | static inline std::ostream& operator << (std::ostream& out, const Formatted& fmtd)
+      |                                          ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/contrib/contrib.hpp:402:30: note: candidate 6: ‘std::ostream& cv::operator<<(std::ostream&, const TickMeter&)’
+  402 |     CV_EXPORTS std::ostream& operator<<(std::ostream& out, const TickMeter& tm);
+      |                              ^~~~~~~~
+/opt/opencv2/include/opencv2/contrib/contrib.hpp:402:55: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+  402 |     CV_EXPORTS std::ostream& operator<<(std::ostream& out, const TickMeter& tm);
+      |                                         ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1110:33: note: candidate 7: ‘template<class _Tp, class _T2, int m, int n> cv::MatxCommaInitializer<_Tp, m, n> cv::operator<<(const Matx<_Tp, n, nm>&, _T2)’
+ 1110 | MatxCommaInitializer<_Tp, m, n> operator << (const Matx<_Tp, m, n>& mtx, _T2 val)
+      |                                 ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1110:33: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Matx<_Tp, n, nm>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:1478:30: note: candidate 8: ‘template<class _Tp, class _T2, int cn> cv::VecCommaInitializer<_Tp, cn> cv::operator<<(const Vec<_Tp, n>&, _T2)’
+ 1478 | VecCommaInitializer<_Tp, cn> operator << (const Vec<_Tp, cn>& vec, _T2 val)
+      |                              ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1478:30: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Vec<_Tp, n>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:2978:51: note: candidate 9: ‘template<class _Tp> cv::FileStorage& cv::operator<<(FileStorage&, const _Tp&)’
+ 2978 | template<typename _Tp> static inline FileStorage& operator << (FileStorage& fs, const _Tp& value)
+      |                                                   ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2978:51: note: template argument deduction/substitution failed:
+test.cpp:92:25: note:   cannot convert ‘myfile’ (type ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’}) to type ‘cv::FileStorage&’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                         ^~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3969:52: note: candidate 10: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const std::vector<Point_<_Tp> >&)’
+ 3969 | template<typename _Tp> static inline std::ostream& operator << (std::ostream& out,
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3969:52: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const std::vector<cv::Point_<_Tp> >’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3977:52: note: candidate 11: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const std::vector<Point3_<_Tp> >&)’
+ 3977 | template<typename _Tp> static inline std::ostream& operator << (std::ostream& out,
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3977:52: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const std::vector<cv::Point3_<_Tp> >’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3987:59: note: candidate 12: ‘template<class _Tp, int m, int n> std::ostream& cv::operator<<(std::ostream&, const Matx<_Tp, m, n>&)’
+ 3987 | template<typename _Tp, int m, int n> inline std::ostream& operator<<(std::ostream& out, const Matx<_Tp, m, n>& matx)
+      |                                                           ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3987:59: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const cv::Matx<_Tp, m, n>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3995:45: note: candidate 13: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Point_<_Tp>&)’
+ 3995 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Point_<_Tp>& p)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3995:45: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const cv::Point_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4003:45: note: candidate 14: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Point3_<_Tp>&)’
+ 4003 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Point3_<_Tp>& p)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4003:45: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const cv::Point3_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4011:52: note: candidate 15: ‘template<class _Tp, int n> std::ostream& cv::operator<<(std::ostream&, const Vec<_Tp, m>&)’
+ 4011 | template<typename _Tp, int n> inline std::ostream& operator<<(std::ostream& out, const Vec<_Tp, n>& vec)
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4011:52: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const cv::Vec<_Tp, m>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4035:45: note: candidate 16: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Size_<_Tp>&)’
+ 4035 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Size_<_Tp>& size)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4035:45: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const cv::Size_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4043:45: note: candidate 17: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Rect_<_Tp>&)’
+ 4043 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Rect_<_Tp>& rect)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4043:45: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const cv::Rect_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/opt/opencv2/include/opencv2/core/mat.hpp:2091:1: note: candidate 18: ‘template<class _Tp, class T2> cv::MatCommaInitializer_<_Tp> cv::operator<<(const Mat_<_Tp>&, T2)’
+ 2091 | operator << (const Mat_<_Tp>& m, T2 val)
+      | ^~~~~~~~
+/opt/opencv2/include/opencv2/core/mat.hpp:2091:1: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Mat_<_Tp>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/string_view:767:5: note: candidate 19: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  767 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/string_view:767:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/basic_string.h:4367:5: note: candidate 20: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 4367 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/basic_string.h:4367:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/cstddef:130:5: note: candidate 21: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(byte, _IntegerType)’
+  130 |     operator<<(byte __b, _IntegerType __shift) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/cstddef:130:5: note: template argument deduction/substitution failed:
+test.cpp:92:25: note:   cannot convert ‘myfile’ (type ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’}) to type ‘std::byte’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                         ^~~~~~
+/usr/include/c++/15.2.1/system_error:341:5: note: candidate 22: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  341 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/system_error:341:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:626:5: note: candidate 23: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  626 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:626:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:636:5: note: candidate 24: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  636 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:636:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:642:5: note: candidate 25: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  642 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:642:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:653:5: note: candidate 26: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  653 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:653:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:658:5: note: candidate 27: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  658 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:658:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:717:5: note: candidate 28: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  717 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:717:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.tcc:311:5: note: candidate 29: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  311 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.tcc:311:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:734:5: note: candidate 30: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  734 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:734:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:747:5: note: candidate 31: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  747 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:747:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:752:5: note: candidate 32: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  752 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:752:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: note: candidate 33: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  836 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: note: template argument deduction/substitution failed:
+/usr/include/c++/15.2.1/bits/ostream.h: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ifstream<char>&; _Tp = double]’:
+test.cpp:92:37:   required from here
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+  836 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:89:5: note: candidate 34: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Resetiosflags)’
+   89 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:89:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:119:5: note: candidate 35: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setiosflags)’
+  119 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:119:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:153:5: note: candidate 36: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setbase)’
+  153 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:153:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:190:5: note: candidate 37: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setfill<_CharT>)’
+  190 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:190:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:220:5: note: candidate 38: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setprecision)’
+  220 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:220:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:250:5: note: candidate 39: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setw)’
+  250 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:250:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:323:5: note: candidate 40: ‘template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_money<_MoneyT>)’
+  323 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:323:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/iomanip:375:5: note: candidate 41: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_time<_CharT>)’
+  375 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:375:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/shared_ptr.h:70:5: note: candidate 42: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __shared_ptr<_Tp, _Lp>&)’
+   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/shared_ptr.h:70:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/complex:597:5: note: candidate 43: ‘template<class _Tp, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const complex<_Tp>&)’
+  597 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const complex<_Tp>& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/complex:597:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 44: ‘template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const _Expr<_Dom2, typename _Dom2::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 45: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 46: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const typename _Dom::value_type&, const _Expr<_Dom1, typename _Dom1::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 47: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const valarray<typename _Dom::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 48: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const valarray<typename _Dom::value_type>&, const _Expr<_Dom1, typename _Dom1::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 49: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const valarray<_Tp>&, const valarray<_Tp>&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::valarray<_Tp>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 50: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const valarray<_Tp>&, const typename valarray<_Tp>::value_type&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::valarray<_Tp>’
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 51: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const typename valarray<_Tp>::value_type&, const valarray<_Tp>&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:92:58: note:   mismatched types ‘const std::valarray<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   92 |                         myfile << nn.w_hidden_output[i][j];
+      |                                                          ^
+test.cpp:95:24: error: no match for ‘operator<<’ (operand types are ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’})
+   95 |                 myfile << nn.b_output[i];
+test.cpp:95:24: note: there are 51 candidates
+/opt/opencv2/include/opencv2/core/operations.hpp:2990:25: note: candidate 1: ‘cv::FileStorage& cv::operator<<(FileStorage&, const std::string&)’
+ 2990 | CV_EXPORTS FileStorage& operator << (FileStorage& fs, const string& str);
+      |                         ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2990:51: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2990 | CV_EXPORTS FileStorage& operator << (FileStorage& fs, const string& str);
+      |                                      ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:2992:28: note: candidate 2: ‘cv::FileStorage& cv::operator<<(FileStorage&, const char*)’
+ 2992 | static inline FileStorage& operator << (FileStorage& fs, const char* str)
+      |                            ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2992:54: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2992 | static inline FileStorage& operator << (FileStorage& fs, const char* str)
+      |                                         ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:2995:28: note: candidate 3: ‘cv::FileStorage& cv::operator<<(FileStorage&, char*)’
+ 2995 | static inline FileStorage& operator << (FileStorage& fs, char* value)
+      |                            ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2995:54: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘cv::FileStorage&’
+ 2995 | static inline FileStorage& operator << (FileStorage& fs, char* value)
+      |                                         ~~~~~~~~~~~~~^~
+/opt/opencv2/include/opencv2/core/operations.hpp:3949:29: note: candidate 4: ‘std::ostream& cv::operator<<(std::ostream&, const Mat&)’
+ 3949 | static inline std::ostream& operator << (std::ostream& out, const Mat& mtx)
+      |                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3949:56: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+ 3949 | static inline std::ostream& operator << (std::ostream& out, const Mat& mtx)
+      |                                          ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3962:29: note: candidate 5: ‘std::ostream& cv::operator<<(std::ostream&, const Formatted&)’
+ 3962 | static inline std::ostream& operator << (std::ostream& out, const Formatted& fmtd)
+      |                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3962:56: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+ 3962 | static inline std::ostream& operator << (std::ostream& out, const Formatted& fmtd)
+      |                                          ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/contrib/contrib.hpp:402:30: note: candidate 6: ‘std::ostream& cv::operator<<(std::ostream&, const TickMeter&)’
+  402 |     CV_EXPORTS std::ostream& operator<<(std::ostream& out, const TickMeter& tm);
+      |                              ^~~~~~~~
+/opt/opencv2/include/opencv2/contrib/contrib.hpp:402:55: note: no known conversion for argument 1 from ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘std::ostream&’ {aka ‘std::basic_ostream<char>&’}
+  402 |     CV_EXPORTS std::ostream& operator<<(std::ostream& out, const TickMeter& tm);
+      |                                         ~~~~~~~~~~~~~~^~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1110:33: note: candidate 7: ‘template<class _Tp, class _T2, int m, int n> cv::MatxCommaInitializer<_Tp, m, n> cv::operator<<(const Matx<_Tp, n, nm>&, _T2)’
+ 1110 | MatxCommaInitializer<_Tp, m, n> operator << (const Matx<_Tp, m, n>& mtx, _T2 val)
+      |                                 ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1110:33: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Matx<_Tp, n, nm>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:1478:30: note: candidate 8: ‘template<class _Tp, class _T2, int cn> cv::VecCommaInitializer<_Tp, cn> cv::operator<<(const Vec<_Tp, n>&, _T2)’
+ 1478 | VecCommaInitializer<_Tp, cn> operator << (const Vec<_Tp, cn>& vec, _T2 val)
+      |                              ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:1478:30: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Vec<_Tp, n>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:2978:51: note: candidate 9: ‘template<class _Tp> cv::FileStorage& cv::operator<<(FileStorage&, const _Tp&)’
+ 2978 | template<typename _Tp> static inline FileStorage& operator << (FileStorage& fs, const _Tp& value)
+      |                                                   ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:2978:51: note: template argument deduction/substitution failed:
+test.cpp:95:17: note:   cannot convert ‘myfile’ (type ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’}) to type ‘cv::FileStorage&’
+   95 |                 myfile << nn.b_output[i];
+      |                 ^~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3969:52: note: candidate 10: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const std::vector<Point_<_Tp> >&)’
+ 3969 | template<typename _Tp> static inline std::ostream& operator << (std::ostream& out,
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3969:52: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const std::vector<cv::Point_<_Tp> >’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3977:52: note: candidate 11: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const std::vector<Point3_<_Tp> >&)’
+ 3977 | template<typename _Tp> static inline std::ostream& operator << (std::ostream& out,
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3977:52: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const std::vector<cv::Point3_<_Tp> >’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3987:59: note: candidate 12: ‘template<class _Tp, int m, int n> std::ostream& cv::operator<<(std::ostream&, const Matx<_Tp, m, n>&)’
+ 3987 | template<typename _Tp, int m, int n> inline std::ostream& operator<<(std::ostream& out, const Matx<_Tp, m, n>& matx)
+      |                                                           ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3987:59: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const cv::Matx<_Tp, m, n>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:3995:45: note: candidate 13: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Point_<_Tp>&)’
+ 3995 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Point_<_Tp>& p)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:3995:45: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const cv::Point_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4003:45: note: candidate 14: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Point3_<_Tp>&)’
+ 4003 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Point3_<_Tp>& p)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4003:45: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const cv::Point3_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4011:52: note: candidate 15: ‘template<class _Tp, int n> std::ostream& cv::operator<<(std::ostream&, const Vec<_Tp, m>&)’
+ 4011 | template<typename _Tp, int n> inline std::ostream& operator<<(std::ostream& out, const Vec<_Tp, n>& vec)
+      |                                                    ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4011:52: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const cv::Vec<_Tp, m>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4035:45: note: candidate 16: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Size_<_Tp>&)’
+ 4035 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Size_<_Tp>& size)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4035:45: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const cv::Size_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/operations.hpp:4043:45: note: candidate 17: ‘template<class _Tp> std::ostream& cv::operator<<(std::ostream&, const Rect_<_Tp>&)’
+ 4043 | template<typename _Tp> inline std::ostream& operator<<(std::ostream& out, const Rect_<_Tp>& rect)
+      |                                             ^~~~~~~~
+/opt/opencv2/include/opencv2/core/operations.hpp:4043:45: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const cv::Rect_<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/opt/opencv2/include/opencv2/core/mat.hpp:2091:1: note: candidate 18: ‘template<class _Tp, class T2> cv::MatCommaInitializer_<_Tp> cv::operator<<(const Mat_<_Tp>&, T2)’
+ 2091 | operator << (const Mat_<_Tp>& m, T2 val)
+      | ^~~~~~~~
+/opt/opencv2/include/opencv2/core/mat.hpp:2091:1: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const cv::Mat_<_Tp>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/string_view:767:5: note: candidate 19: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  767 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/string_view:767:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/basic_string.h:4367:5: note: candidate 20: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Alloc>&)’
+ 4367 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/basic_string.h:4367:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/cstddef:130:5: note: candidate 21: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(byte, _IntegerType)’
+  130 |     operator<<(byte __b, _IntegerType __shift) noexcept
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/cstddef:130:5: note: template argument deduction/substitution failed:
+test.cpp:95:17: note:   cannot convert ‘myfile’ (type ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’}) to type ‘std::byte’
+   95 |                 myfile << nn.b_output[i];
+      |                 ^~~~~~
+/usr/include/c++/15.2.1/system_error:341:5: note: candidate 22: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  341 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/system_error:341:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:626:5: note: candidate 23: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  626 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:626:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:636:5: note: candidate 24: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  636 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:636:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:642:5: note: candidate 25: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  642 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:642:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:653:5: note: candidate 26: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  653 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:653:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:658:5: note: candidate 27: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  658 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:658:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:717:5: note: candidate 28: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  717 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:717:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.tcc:311:5: note: candidate 29: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  311 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.tcc:311:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:734:5: note: candidate 30: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  734 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:734:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:747:5: note: candidate 31: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  747 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:747:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:752:5: note: candidate 32: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  752 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:752:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: note: candidate 33: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  836 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: note: template argument deduction/substitution failed:
+/usr/include/c++/15.2.1/bits/ostream.h: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ifstream<char>&; _Tp = double]’:
+test.cpp:95:26:   required from here
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/ostream.h:836:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+  836 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:89:5: note: candidate 34: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Resetiosflags)’
+   89 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:89:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:119:5: note: candidate 35: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setiosflags)’
+  119 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:119:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:153:5: note: candidate 36: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setbase)’
+  153 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:153:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:190:5: note: candidate 37: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setfill<_CharT>)’
+  190 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:190:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:220:5: note: candidate 38: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setprecision)’
+  220 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:220:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:250:5: note: candidate 39: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Setw)’
+  250 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:250:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:323:5: note: candidate 40: ‘template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_money<_MoneyT>)’
+  323 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:323:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/iomanip:375:5: note: candidate 41: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _Put_time<_CharT>)’
+  375 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/iomanip:375:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/shared_ptr.h:70:5: note: candidate 42: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __shared_ptr<_Tp, _Lp>&)’
+   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/bits/shared_ptr.h:70:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/complex:597:5: note: candidate 43: ‘template<class _Tp, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const complex<_Tp>&)’
+  597 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const complex<_Tp>& __x)
+      |     ^~~~~~~~
+/usr/include/c++/15.2.1/complex:597:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 44: ‘template<class _Dom1, class _Dom2> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const _Expr<_Dom2, typename _Dom2::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 45: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 46: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const typename _Dom::value_type&, const _Expr<_Dom1, typename _Dom1::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 47: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const _Expr<_Dom1, typename _Dom1::value_type>&, const valarray<typename _Dom::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: candidate 48: ‘template<class _Dom> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const valarray<typename _Dom::value_type>&, const _Expr<_Dom1, typename _Dom1::value_type>&)’
+  415 |     _DEFINE_EXPR_BINARY_OPERATOR(<<, struct std::__shift_left)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/bits/valarray_after.h:415:5: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 49: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const valarray<_Tp>&, const valarray<_Tp>&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::valarray<_Tp>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 50: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const valarray<_Tp>&, const typename valarray<_Tp>::value_type&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘const std::valarray<_Tp>’
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+/usr/include/c++/15.2.1/valarray:1206:1: note: candidate 51: ‘template<class _Tp> std::_Expr<std::__detail::_BinClos<std::__shift_left, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const typename valarray<_Tp>::value_type&, const valarray<_Tp>&)’
+ 1206 | _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/15.2.1/valarray:1206:1: note: template argument deduction/substitution failed:
+test.cpp:95:40: note:   mismatched types ‘const std::valarray<_Tp>’ and ‘__gnu_cxx::__alloc_traits<std::allocator<double>, double>::value_type’ {aka ‘double’}
+   95 |                 myfile << nn.b_output[i];
+      |                                        ^
+test.cpp:99:2: error: expected ‘}’ at end of input
+   99 | }
+      |  ^
+test.cpp:83:58: note: to match this ‘{’
+   83 |         for(int i = 0; i < nn.w_input_hidden.size(); i++){
+      |                                                          ^
+test.cpp:99:2: error: expected ‘}’ at end of input
+   99 | }
+      |  ^
+test.cpp:78:60: note: to match this ‘{’
+   78 | void loadNN(const std::string& filename, NeuralNetwork &nn){
+      |                                                            ^

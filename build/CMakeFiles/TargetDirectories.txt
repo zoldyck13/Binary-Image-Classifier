@@ -1,0 +1,3 @@
+/home/ali/Desktop/recycle_end/recycle/build/CMakeFiles/nn_cpu.dir
+/home/ali/Desktop/recycle_end/recycle/build/CMakeFiles/edit_cache.dir
+/home/ali/Desktop/recycle_end/recycle/build/CMakeFiles/rebuild_cache.dir
