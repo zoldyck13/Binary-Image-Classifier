@@ -80,11 +80,11 @@ Where:
 
 ```
 dataset/
-├── water/
+├── class_a/
 │   ├── image1.jpg
 │   ├── image2.jpg
 │   └── ...
-└── other/
+└── class_b/
     ├── image1.jpg
     ├── image2.jpg
     └── ...
